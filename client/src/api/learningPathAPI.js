@@ -23,4 +23,17 @@ export default class Api {
             return e.response.data
         }
     }
+
+
+    static async getAllLearningPath() {
+        const uri = `${__API_BASE_ADDRESS__}/api/learningPath/`;
+        try {
+            const res = await get(uri);
+            return res.data;
+        }
+        catch (e) {
+            return e.response.data
+        }
+    }
+    
 }

@@ -9,6 +9,7 @@ import userReducer from './userReducer';
 import courseReducer from './courseReducer';
 import domainReducer from './domainReducer'
 import quizReducer from './quizReducer';
+import learningPathReducer from './learningPathReducer'
 
 export default combineReducers({
     global: globalReducer,
@@ -20,5 +21,6 @@ export default combineReducers({
     user: userReducer,
     course: courseReducer,
     domain: domainReducer,
-    quiz: quizReducer
+    quiz: quizReducer,
+    learningPath: learningPathReducer,
 })
