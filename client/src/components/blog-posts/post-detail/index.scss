@@ -10,6 +10,7 @@
         margin: auto;
         width: 900px;
         padding: 20px;
+        margin-bottom: 20px;
 
         .title {
             font-size: 28px;
@@ -17,6 +18,11 @@
             font-weight: bold;
             margin-bottom: 25px;
             color: $dark-blue1;
+        }
+
+        .small {
+            font-size: 18px;
+            opacity: 0.8;
         }
 
         .image-detail-container {
@@ -54,5 +60,36 @@
                 }
             }
         }
+
+        .new-comment {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            input {
+                width: 60%;
+                padding: 8px 5px;
+            }
+        }
+
+        .comment {
+            margin: 6px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .circle {
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background: linear-gradient(45deg, $dark-blue1, $light-blue1);
+                margin-right: 10px;
+            }
+        }
+
+        .comments {
+            padding: 20px 30px;
+        }    
+
     }
 }
