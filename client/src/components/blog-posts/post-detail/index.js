@@ -1,20 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getPostDetail } from '../../../actions/postActions';
 import { formatDate } from '../../../helpers';
-import { OutlineButton } from '../../../common/button';
+import { OutlineButton, Button } from '../../../common/button';
+import postAPI from '../../../api/postAPI';
 import './index.scss';
 
 const PostDetail = () => {
     const { postId } = useParams()
     const dispatch = useDispatch();
+
     const postState = useSelector(state => state.post);
+    const [state, setState] = useState({ comment: "" });
 
     useEffect(() => {
         getPostDetail(postId, dispatch);
     }, [])
+
+    const handleChange = (e) => {
+        setState({
+            ...state,
+            comment: e.target.value
+        })
+    }
+
+    const handleSubmit = async() => {
+        if(state.comment === "")  return;
+        console.log(state.comment);
+        await postAPI.makeCommentOnPost(postId, state.comment);
+        getPostDetail(postId, dispatch);
+    }
 
     return (
         postState.postDetailLoading
@@ -34,10 +51,30 @@ const PostDetail = () => {
                             </div>
                             <div>
                                 <Link to={postState.postDetail.quiz ? `/quiz/${postState.postDetail.quiz}` : '#'}>
-                                    <OutlineButton text="Take Quiz" />
+                                    <Button text="Take Quiz" />
                                 </Link>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="comments post-detail">
+                        <div className="title small">Comments</div>
+                        <div className="new-comment">
+                            <input 
+                                type="text" 
+                                value={state.comment}
+                                onChange={handleChange}
+                            />
+                            <OutlineButton text="Save" onClick={handleSubmit} />
+                        </div>
+                        {
+                            postState.postDetail.comments.map(comment => (
+                                <div className="comment" key={comment._id} >
+                                    <div className="circle"></div>
+                                    <div className="text">{comment.text}</div>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             )
