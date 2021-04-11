@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/53405831/114286838-fb259380-9a7f-11eb-8853-0ae6d2c2d8a4.png)
+
+
 # Finance-Buddy  - A new way to learn Finance
 ### By Team Name 203
 This webapp is Best-fit for learners who do not have any experience in field of finance.
