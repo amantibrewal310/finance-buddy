@@ -611,6 +611,11 @@ blockquote {
   font-size: 34px;
   line-height: 42px;
 }
+
+.post .caption p {
+  margin-bottom: 5px !important;
+}
+
 .md-heading {
   font-size: 24px !important;
   line-height: 36px !important;

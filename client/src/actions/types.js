@@ -44,6 +44,7 @@ export const GET_POST_DETAIL = "GET_POST_DETAIL";
 //courseReducer TYPES
 export const GET_ALL_COURSE_BY_DOMAIN = 'GET_ALL_COURSE_BY_DOMAIN'
 export const GET_ALL_COURSE = 'GET_ALL_COURSE'
+export const GET_COURSE_DETAIL = 'GET_COURSE_DETAIL';
 
 //domainReducer TYPES
 export const GET_ALL_DOMAIN = 'GET_ALL_DOMAIN'

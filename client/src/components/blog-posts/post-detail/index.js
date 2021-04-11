@@ -41,7 +41,7 @@ const PostDetail = () => {
                     <div className="post-detail">
                         <div className="title">{postState.postDetail.title}</div>
                         <div className="image-detail-container">
-                            <img src={postState.postDetail.image} alt="post-img" />
+                            <img src={postState.postDetail.image ? postState.postDetail.image: 'https://bootdey.com/img/Content/avatar/avatar1.png'} alt="post-img" />
                         </div>
                         <div className="content">{postState.postDetail.content}</div>
                         <div className="section-1">

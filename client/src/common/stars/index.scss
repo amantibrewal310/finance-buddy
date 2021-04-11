@@ -1,0 +1,10 @@
+@import '../../colors.scss';
+
+.diff-stars {
+    .glow-star {
+        color: $dark-blue1;
+    }
+    .dead-star {
+        color: #C4C4C4;
+    }
+}

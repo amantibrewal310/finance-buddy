@@ -11,6 +11,7 @@ import PostDetail from '../components/blog-posts/post-detail';
 import UserProfile from '../components/profile';
 import Domain from '../components/domain';
 import Course from '../components/course';
+import CourseDetail from '../components/course/course-detail/index';
 import Quiz from '../components/quiz';
 import PageNotFound from '../components/error/page-not-found';
 
@@ -29,6 +30,7 @@ export default class Routes extends Component {
                 <Route path="/user_profile" component={UserProfile} exact />
                 <Route path="/domain" component={Domain} exact />
                 <Route path="/course" component={Course} exact />
+                <Route path="/course/:courseId" component={CourseDetail} exact />
                 <Route path="/quiz/:quizId" component={Quiz} exact />
                 <Route component={PageNotFound} />
               </Switch>

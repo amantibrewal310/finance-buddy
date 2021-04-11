@@ -36,8 +36,6 @@ const SinglePost = (props) => {
                         >Posted on: <strong style={{ color: "#5d62b5" }}>{formatDate(post.createdAt)}</strong></p>
                       </div>
                     </li>
-                    <li>
-                    </li>
                   </ul>
                 </div>
               </div>
